@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input {
+  width: 80%;
+  padding: 8px 20px;
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 600px) {
+    input{
+        width: 100%;
+    }
+}
+
+label {
+  font-weight: 600;
+}
+
+.btn-action {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.text-2{
+    position: absolute;
+    transform: translateY(30px);
+    color: white;
+}
+
+.btn-action::before {
+  content: "";
+  position: absolute;
+  width: 110%;
+  height: 100px;
+  background-color: black;
+  transition: 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+  transition-delay: -0.2s;
+  pointer-events: none;
+  transform: translateY(100px);
+  border-radius: 50%;
+}
+
+.btn-action p {
+  transition: 0.4s cubic-bezier(0.76, 0, 0.24, 1);
+  z-index: 5;
+}
+
+.btn-overlay {
+  transition: 0.6s cubic-bezier(0.76, 0, 0.24, 1);
+  transition-delay: -0.2s;
+}
+
+.btn-action:hover .text-1 {
+  transform: translateY(4rem);
+}
+.btn-action:hover .text-2 {
+  transition-delay: 0.15s;
+  transform: translateY(0rem);
+}
+.btn-action:hover::before {
+  transform: translateY(0px);
+  transition-delay: -0.05s;
+}
+
+@media (max-width: 1000px) {
+  .btn-action:hover .text-1 {
+    transform: translateY(0rem);
+  }
+  .btn-action:hover .text-2 {
+    transform: translateY(2rem);
+  }
+  .btn-action:hover .btn-overlay {
+    transform: translateY(100px);
+  }
+}
