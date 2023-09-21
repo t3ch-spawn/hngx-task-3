@@ -85,7 +85,7 @@ label {
   transition-delay: -0.05s;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 550px) {
   .btn-action:hover .text-1 {
     transform: translateY(0px);
   }
