@@ -1,8 +1,14 @@
-# React + Vite
+# HNGX TASK 3
+This is my code for the third frontend task in HNGX
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# What's it about?
+This project contains a gallery of various pictures that can be rearranged by dragging and dropping them
+The pictures can be filtered(searched) in the search bar according to the tags at the bottom of each card
+Last but not the least, a user must sign in to access these pictures. 
+To sign in, you may use 'user@example.com' as email and '1Password' as password. You can also create your account if you want
 
-Currently, two official plugins are available:
+# Technologies used
+I used ReactJs and Tailwind for this project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# How to run it locally
+'npm run dev' will do the trick. 
