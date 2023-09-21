@@ -16,14 +16,11 @@ export default function SignIn() {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, passwd)
       .then((userCred) => {
-        console.log(userCred);
         setSuccess(true);
-        console.log(userCred);
       })
       .catch((error) => {
         setSuccess(false);
         setErrorMsg("invalid username or password");
-        console.log(error);
       });
 
     setErrorMsg("");
@@ -44,7 +41,7 @@ export default function SignIn() {
 
           {/* // container for sign in page */}
           <section className="bg-white text-black w-[80%] max-w-[500px] p-8 -350:p-4 -350:py-6 flex-col flex gap-4 rounded-lg">
-            {success ? "" : errorMsg}
+            {success ? "" : <p className="text-red-700">{errorMsg}</p>}
 
             <h1 className="text-left text-3xl font-bold">Sign in</h1>
 

@@ -10,7 +10,6 @@ export default function AuthDetails(props) {
     const listen = onAuthStateChanged(auth, (newUser) => {
       if (newUser) {
         setAuthUser(newUser);
-        console.log(authUser);
       } else {
         setAuthUser(null);
       }
@@ -27,15 +26,17 @@ export default function AuthDetails(props) {
     });
   }
   return (
-    <div>
+    <div className="text-black">
       {authUser ? (
-        <>
+        <div className="flex gap-4 -350:flex-col">
           <p>{`Signed in as ${authUser.email}`}</p>
-          <button onClick={()=>{
+          <button
+            className="underline"
+          onClick={()=>{
             handleSignOut()
             props.changeSuccess()
           }}>Sign out</button>
-        </>
+        </div>
       ) : (
         <p>Signed Out</p>
       )}
