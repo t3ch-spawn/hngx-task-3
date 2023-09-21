@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -15,20 +15,20 @@ input {
   border-radius: 10px;
 }
 
-.search{
-    width: 120%;
+.search {
+  width: 120%;
 }
 
-@media (max-width: 500px){
-    .search{
-        width: 100%;
-    }
+@media (max-width: 500px) {
+  .search {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 600px) {
-    input{
-        width: 100%;
-    }
+  input {
+    width: 100%;
+  }
 }
 
 label {
@@ -44,10 +44,10 @@ label {
   overflow: hidden;
 }
 
-.text-2{
-    position: absolute;
-    transform: translateY(30px);
-    color: white;
+.text-2 {
+  position: absolute;
+  transform: translateY(30px);
+  color: white;
 }
 
 .btn-action::before {
@@ -85,6 +85,18 @@ label {
   transition-delay: -0.05s;
 }
 
+@media screen and (max-width: 500px) {
+  .btn-action:hover .text-1 {
+    transform: translateY(0px);
+  }
+  .btn-action:hover .text-2 {
+    transform: translateY(30px);
+  }
+  .btn-action:hover::before {
+    transform: translateY(100px);
+  }
+}
+
 @media (max-width: 1000px) {
   .btn-action:hover .text-1 {
     transform: translateY(0rem);
@@ -98,48 +110,47 @@ label {
 }
 
 .galleri-list {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
-    grid-auto-rows: 1fr;
-    gap: 50px;
-    justify-items: center;
-    align-items: start;
-    justify-content: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 200px));
+  grid-auto-rows: 1fr;
+  gap: 50px;
+  justify-items: center;
+  align-items: start;
+  justify-content: center;
+}
+
+.search::placeholder {
+  font-style: italic;
+}
+
+.spinner {
+  height: 50px;
+  width: 50px;
+  border: 5px solid black;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-radius: 50%;
+  animation: spin 0.4s infinite;
+  /* transition: 0.3s ease; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+.spinner.not-active {
+  opacity: 1;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
   }
 
-  .search::placeholder{
-    font-style: italic;
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
   }
-
-  .spinner{
-    height: 50px;
-    width: 50px;
-    border: 5px solid black;
-    border-top-color: transparent;
-    border-left-color: transparent;
-    border-radius: 50%;
-    animation: spin 0.4s infinite;
-    /* transition: 0.3s ease; */
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }
-
-  .spinner.not-active{
-    opacity: 1;
-    pointer-events: none;
-  }
-
-  @keyframes spin {
-    0%{
-        transform:translate(-50%, -50%)  rotate(0deg) ;
-    }
-
-    100%{
-        transform: translate(-50%, -50%) rotate(360deg) ;
-    }
-    
-  }
+}
