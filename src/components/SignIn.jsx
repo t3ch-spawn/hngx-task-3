@@ -40,7 +40,7 @@ export default function SignIn() {
           <h1 className="text-white mb-7 text-4xl  text-center -600:text-3xl">Welcome back to Galleri 😊</h1>
 
           {/* // container for sign in page */}
-          <section className="bg-white text-black w-[80%] max-w-[500px] p-8 -350:p-4 -350:py-6 flex-col flex gap-4 rounded-lg">
+          <section className="bg-white text-black w-[90%] max-w-[500px] p-8 -350:p-4 -350:py-6 flex-col flex gap-4 rounded-lg">
             {success ? "" : <p className="text-red-700">{errorMsg}</p>}
 
             <h1 className="text-left text-3xl font-bold">Sign in</h1>

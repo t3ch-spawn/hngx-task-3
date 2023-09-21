@@ -3,14 +3,16 @@ import AuthDetails from "./AuthDetails";
 import { galleri } from "../galleri";
 import search from "../../public/images/search.svg";
 import loader from "../../public/images/loader.gif";
-import { DndContext, closestCenter } from "@dnd-kit/core";
 import {
-  arrayMove,
-  horizontalListSortingStrategy,
-  SortableContext,
-  useSortable,
-  verticalListSortingStrategy,
-} from "@dnd-kit/sortable";
+  DndContext,
+  closestCenter,
+  useSensors,
+  TouchSensor,
+  useSensor,
+  MouseSensor,
+  KeyboardSensor,
+} from "@dnd-kit/core";
+import { arrayMove, rectSortingStrategy, SortableContext, useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
 
 function Galleri_Item(props) {
@@ -87,6 +89,12 @@ export default function Home(props) {
     setGalleris(newGalleri);
   }
 
+  const sensors = useSensors(
+    useSensor(MouseSensor),
+    useSensor(TouchSensor),
+    useSensor(KeyboardSensor)
+  );
+
   return (
     <div className="w-[100%] ">
       <nav className="flex justify-between sticky top-0 z-[20] w-[100%] px-7 items-center py-2 bg-white text-black -800:flex-col -800:gap-2 -800:items-start">
@@ -108,7 +116,12 @@ export default function Home(props) {
         <AuthDetails changeSuccess={props.changeSuccess} />
       </nav>
 
-      <DndContext collisionDetection={closestCenter} onDragEnd={onDragEnd}>
+      <DndContext
+        collisionDetection={closestCenter}
+        onDragEnd={onDragEnd}
+        strategy={rectSortingStrategy}
+        sensors={sensors}
+      >
         <SortableContext items={galleris}>
           <div className="relative z-[10] galleri-list mt-20 ">
             {galleriEls}

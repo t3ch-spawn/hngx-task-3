@@ -26,7 +26,7 @@ export default function SignUp() {
       <h1 className="text-white mb-7 text-4xl text-center">Sign Up for Galleri 😉</h1>
 
       {/* // container for sign up form */}
-      <section className="bg-white text-black w-[80%] max-w-[500px] p-8 -350:p-3 -350:p-6 flex-col flex gap-4 rounded-lg">
+      <section className="bg-white text-black w-[90%] max-w-[500px] p-8 -350:p-3 -350:py-6 flex-col flex gap-4 rounded-lg">
         {success ? (
           <p className="text-green font-bold text-2xl text-green-700">
             SIGN UP SUCCESSFUL
