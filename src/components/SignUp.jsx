@@ -22,7 +22,7 @@ export default function SignUp() {
   }
 
   return (
-    <>
+    <div className="m-auto w-[90%] max-w-[500px] ">
       <h1 className="text-white mb-7 text-4xl text-center">Sign Up for Galleri 😉</h1>
 
       {/* // container for sign up form */}
@@ -87,6 +87,6 @@ export default function SignUp() {
           </Link>
         </div>
       </section>
-    </>
+    </div>
   );
 }

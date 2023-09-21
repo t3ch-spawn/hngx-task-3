@@ -36,7 +36,7 @@ export default function SignIn() {
       {success ? (
         <Home changeSuccess={changeSuccess} />
       ) : (
-        <>
+        <div className="m-auto">
           <h1 className="text-white mb-7 text-4xl  text-center -600:text-3xl">Welcome back to Galleri 😊</h1>
 
           {/* // container for sign in page */}
@@ -93,7 +93,7 @@ export default function SignIn() {
               </Link>
             </div>
           </section>
-        </>
+        </div>
       )}
     </>
   );

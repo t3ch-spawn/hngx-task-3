@@ -12,7 +12,7 @@ function App() {
   const [count, setCount] = useState(0)
 
   return (
-    <div className='bg-black min-h-screen text-white flex flex-col items-center justify-center font-main'>
+    <div className='bg-black min-h-screen text-white flex flex-col items-center justify-between font-main'>
     <Routes>
       <Route path='/' element = {<SignIn/>}/>
       <Route path='/signup' element = {<SignUp/>}/>

@@ -78,7 +78,7 @@ export default function Home(props) {
 
   //   function that filters through images based on search input
   function handleSearch(e) {
-    const value = e.target.value;
+    const value = e.target.value.toLowerCase();
 
     const newGalleri = galleri.filter((item) => {
       const myString = item.tag.join(" ");
@@ -96,7 +96,7 @@ export default function Home(props) {
   );
 
   return (
-    <div className="w-[100%] ">
+    <div className="w-[100%]">
       <nav className="flex justify-between sticky top-0 z-[20] w-[100%] px-7 items-center py-2 bg-white text-black -800:flex-col -800:gap-2 -800:items-start">
         {/* container for search bar */}
         <div className="relative">
@@ -116,7 +116,7 @@ export default function Home(props) {
         <AuthDetails changeSuccess={props.changeSuccess} />
       </nav>
 
-        <div>
+        <div className="mt-20">
             
             <h3 className="text-white text-xl mt-10 text-center">Drag and drop to rearrange 🧩</h3>
 
