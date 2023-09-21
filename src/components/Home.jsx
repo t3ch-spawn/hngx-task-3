@@ -116,18 +116,23 @@ export default function Home(props) {
         <AuthDetails changeSuccess={props.changeSuccess} />
       </nav>
 
-      <DndContext
+        <div>
+            
+            <h3 className="text-white text-xl mt-10 text-center">Drag and drop to rearrange 🧩</h3>
+
+        <DndContext
         collisionDetection={closestCenter}
         onDragEnd={onDragEnd}
         strategy={rectSortingStrategy}
         sensors={sensors}
       >
         <SortableContext items={galleris}>
-          <div className="relative z-[10] galleri-list mt-20 ">
+          <div className="relative z-[10] galleri-list mt-8 ">
             {galleriEls}
           </div>
         </SortableContext>
       </DndContext>
+        </div>
     </div>
   );
 }
